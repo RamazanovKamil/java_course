@@ -1,5 +1,7 @@
 package com.kamilrr.java.git;
 
+import java.time.Year;
+
 public class IfElseStatements {
     void showIfElse(int delimoe, int delitel){
         if (delitel != 0) {
@@ -66,5 +68,36 @@ class SwitchCase {
                 return "It's not a valid day";
                 //break;
         }
+    }
+}
+class SwitchCase2 {
+    static void numOfMonth(int month){
+        switch (month){
+            case 1,3,5,7,8,10,12 -> System.out.println("This month has 31 day");
+            case 2 -> System.out.println("This month has 28 or 29 days");
+            case 4,6,9,11 -> System.out.println("This month has 30 days");
+            default -> System.out.println("This is incorrect number of month!");
+        }
+    }
+}
+class SwitchCase3 {
+    static String isLeapYear(int month, int year){
+        String result = switch (month) {
+            case 1,3,5,7,8,10,12 -> {
+                yield Year.isLeap(year) ? "This month has 31 day. This year is leap." : "This month has 31 day. This year isn't leap.";
+            }
+            case 2 -> {
+                if (Year.isLeap(year)) {
+                    yield "February has 29 days. This year is leap.";
+                } else {
+                    yield "February has 28 days. This year isn't leap.";
+                }
+            }
+            case 4,6,9,11 -> {
+                yield Year.isLeap(year) ? "This month has 30 day. This year is leap." : "This month has 30 day. This year isn't leap.";
+            }
+            default -> "This is incorrect number of month!";
+        };
+        return result;
     }
 }
