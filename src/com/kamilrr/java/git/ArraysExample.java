@@ -7,6 +7,7 @@ class StartArray{
         ArraysExample.showArray();
         VariableArgumentsExample.demonstrateVarargs(5,6,9,7,648,684,9);
         ForEachLoopExample.demonstrateForEachLoop("Hello! ","Java ","World");
+        Arrays2DExample.demonstrate2DArray();
     }
 }
 public class ArraysExample {
@@ -41,6 +42,17 @@ class ForEachLoopExample{
         for(String element : args){
             statement += element;
         }
-        System.out.print(statement);
+        System.out.println(statement);
+    }
+}
+class Arrays2DExample{
+    static void demonstrate2DArray(){
+        int[][] array2d = {{5,7,9,4}, {1,2}, {0}, {4,97,648,87,797,4846,474,49}};
+        for(int i = 0; i < array2d.length; i++) {
+            for(int j = 0; j < array2d[i].length; j++){
+                System.out.print(array2d[i][j] + " ");
+            }
+            System.out.println();
+        }
     }
 }
