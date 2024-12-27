@@ -11,7 +11,7 @@ public class HashMapExample {
         nameById.put(id1, name1);
         nameById.put(id2, name2);
 
-        System.out.println(nameById.get("az002")); //Вернет Lora.
+        System.out.println(nameById.get("az001")); //Вернет Lora.
         System.out.println(nameById.get("az005")); //Вернет null, т.к. его в коллекции нет.
     }
 }
