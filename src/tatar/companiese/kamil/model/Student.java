@@ -5,6 +5,7 @@ public class Student {
     private final String firstName;
     private final String lastName;
     private final int course;
+    private StudentStatus status;
     public Student(String firstName, String lastName, int course){
         this.firstName = firstName;
         this.lastName = lastName;
