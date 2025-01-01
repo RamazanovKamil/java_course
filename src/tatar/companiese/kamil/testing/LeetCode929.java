@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 class StartLC929{
     public static void main(String[] args) {
-        String[] correctedEmails = LeetCode929.numUniqueEmails(new String[]{"lena@mail.ru", "doroty@gmail.com",
+        String[] correctedEmails = LeetCode929.numUniqueEmails(new String[]{"l.ena@mail.ru", "doroty@gmail.com",
                 "sti.ven@leetcode.com", "va.ler+ia@gmail.com"});
         System.out.println(Arrays.toString(correctedEmails));
     }
@@ -36,8 +36,7 @@ public class LeetCode929 {
                     break;
                 }
                 if(localName[i] == '.'){
-                    counter++;
-                    //continue;
+                    continue;
                 } else {
                     counter++;
                 }
@@ -47,8 +46,10 @@ public class LeetCode929 {
                 if(localName[i] == '+') {
                     break;
                 } else if(localName[i] == '.') {
-                    correctedLocalName[i] = '-';
-                    //continue;
+                    for(int j = i; j < correctedLocalName.length; j++){
+                        correctedLocalName[j] = localName[j+1];
+                    }
+                    break;
                 } else {
                     correctedLocalName[i] = localName[i];
                 }

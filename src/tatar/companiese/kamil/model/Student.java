@@ -2,11 +2,13 @@ package tatar.companiese.kamil.model;
 
 //Immutable class:
 public class Student {
+    private final long id;
     private final String firstName;
     private final String lastName;
     private final int course;
     private StudentStatus status;
-    public Student(String firstName, String lastName, int course){
+    public Student(Long id, String firstName, String lastName, int course){
+        this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.course = course;
